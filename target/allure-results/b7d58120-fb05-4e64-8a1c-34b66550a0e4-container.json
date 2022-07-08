@@ -1,0 +1,1 @@
+{"uuid":"b7d58120-fb05-4e64-8a1c-34b66550a0e4","name":"Arcadia2","children":["66b95500-43b8-4ae7-b648-2bc6c6889c32"],"befores":[{"name":"logIn","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1656588240325,"stop":1656588251771}],"afters":[],"start":1656588240284,"stop":1656588285061}
