@@ -12,14 +12,12 @@ public class ParentDashboard {
             xpath = "/html/body/app-root/app-layout-parent/div/div[2]/main/app-parent-dashboard/div[1]/h1"
     )
     private WebElement dashboardTitle;
-    @FindBy(
-            xpath = "/html/body/app-root/app-layout-parent/div/div[2]/app-parent-menu/nav/ul/li[1]/a"
-    )
+    @FindBy(xpath = "/html/body/app-root/app-layout-parent/div/div[2]/app-parent-menu/nav/ul/li[1]/a")
     private WebElement dashboardLeftMenu;
-    @FindBy(
-            xpath = "/html/body/app-root/app-layout-parent/div/div[2]/app-parent-menu/nav/ul/li[3]/a"
-    )
+
+    @FindBy(css = "app-parent-menu > nav > ul > li:nth-child(3) > a")
     private WebElement statistikLeftMenu;
+
     @FindBy(
             css = "img[alt='Arcadia']"
     )

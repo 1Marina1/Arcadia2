@@ -3,15 +3,14 @@ package tests.parentDashboard;
 import helpers.LogInOutBase;
 import helpers.WebDriverContainer1;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.parentPages.ParentDashboard;
-import pages.parentPages.SettingsPage;
 import pages.parentPages.StatisticsPage;
 
 import java.time.Duration;
@@ -40,19 +39,30 @@ public class TestStatisticsPage extends LogInOutBase {
     public void switchBetweenTimeTabs() throws InterruptedException {
         ParentDashboard parentDashboard = PageFactory.initElements(WebDriverContainer1.getDriver(), ParentDashboard.class);
         StatisticsPage statisticsPage = PageFactory.initElements(WebDriverContainer1.getDriver(), StatisticsPage.class);
+        WebDriverWait wait = new WebDriverWait(WebDriverContainer1.getDriver(), Duration.ofSeconds(10));
+        Actions actions = new Actions(WebDriverContainer1.getDriver());
         parentDashboard.getStatistikLeftMenu().click();
-        statisticsPage.getDayTabButton().click();
+
+
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(statisticsPage.getDayTabButton()));
+        ((JavascriptExecutor)WebDriverContainer1.getDriver()).executeScript("arguments[0].click();", element);
+        actions.moveToElement(statisticsPage.getDayTabButton()).doubleClick().perform();
         String valueDay = statisticsPage.getDayTabButton().getAttribute("class");
         Assert.assertEquals(valueDay, "mat-button-toggle w-100 active mat-button-toggle-appearance-standard cdk-focused cdk-mouse-focused mat-button-toggle-checked");
-        statisticsPage.getWeekTabButton().click();
+
+
+        actions.moveToElement(statisticsPage.getWeekTabButton()).doubleClick().perform();
         String valueWeek = statisticsPage.getWeekTabButton().getAttribute("class");
         Assert.assertEquals(valueWeek, "mat-button-toggle w-100 mat-button-toggle-appearance-standard cdk-focused cdk-mouse-focused active mat-button-toggle-checked");
-        statisticsPage.getMonthTabButton().click();
+
+        actions.moveToElement(statisticsPage.getMonthTabButton()).doubleClick().perform();
         String valueMonth = statisticsPage.getMonthTabButton().getAttribute("class");
         Assert.assertEquals(valueMonth, "mat-button-toggle w-100 mat-button-toggle-appearance-standard cdk-focused cdk-mouse-focused active mat-button-toggle-checked");
-        statisticsPage.getAllTabButton().click();
+
+        actions.moveToElement(statisticsPage.getAllTabButton()).doubleClick().perform();
         String valueAll = statisticsPage.getAllTabButton().getAttribute("class");
         Assert.assertEquals(valueAll, "mat-button-toggle w-100 mat-button-toggle-appearance-standard cdk-focused cdk-mouse-focused active mat-button-toggle-checked");
+
         String script = "return window.getComputedStyle(document.querySelector('mat-button-toggle.active'),':before').getPropertyValue('background-color')";
         Thread.sleep(3000);
         JavascriptExecutor js = (JavascriptExecutor)WebDriverContainer1.getDriver();

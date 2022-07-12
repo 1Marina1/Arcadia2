@@ -16,8 +16,6 @@ import pages.parentPages.SettingsPage;
 import java.time.Duration;
 
 public class TestSettingsPage extends LogInOutBase {
-    public TestSettingsPage() {
-    }
 
     @Test
     public void changeParentName() {
@@ -36,9 +34,11 @@ public class TestSettingsPage extends LogInOutBase {
         settingsPage.getNameChangeButton().click();
         settingsPage.getParentNameInput().sendKeys(Keys.BACK_SPACE);
         settingsPage.getSubmitButton().click();
+        String newNameCheck2 = settingsPage.getParentName().getText();
+        Assert.assertEquals(newNameCheck2, "Marina");
     }
 
-   // @Test
+    @Test
     public void changeParentSurname() {
         ParentDashboard parentDashboard = PageFactory.initElements(WebDriverContainer1.getDriver(), ParentDashboard.class);
         SettingsPage settingsPage = PageFactory.initElements(WebDriverContainer1.getDriver(), SettingsPage.class);
@@ -55,9 +55,11 @@ public class TestSettingsPage extends LogInOutBase {
         settingsPage.getSurnameChangeButton().click();
         settingsPage.getParentSurnameInput().sendKeys(Keys.BACK_SPACE);
         settingsPage.getSubmitButton().click();
+        String newSurnameCheck2 = settingsPage.getParentSurname().getText();
+        Assert.assertEquals(newSurnameCheck2, "Tester");
     }
 
-    //@Test
+    @Test
     public void changeParentEmail() {
         ParentDashboard parentDashboard = PageFactory.initElements(WebDriverContainer1.getDriver(), ParentDashboard.class);
         SettingsPage settingsPage = PageFactory.initElements(WebDriverContainer1.getDriver(), SettingsPage.class);
@@ -74,7 +76,7 @@ public class TestSettingsPage extends LogInOutBase {
         settingsPage.getNewEmailDeclineButton().click();
     }
 
-   // @Test
+    @Test
     public void changeParentPassword() {
         ParentDashboard parentDashboard = PageFactory.initElements(WebDriverContainer1.getDriver(), ParentDashboard.class);
         SettingsPage settingsPage = PageFactory.initElements(WebDriverContainer1.getDriver(), SettingsPage.class);

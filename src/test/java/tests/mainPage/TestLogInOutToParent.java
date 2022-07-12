@@ -45,13 +45,13 @@ public class TestLogInOutToParent extends TestBase {
     }
 
     public void attemptLogin(String email, String password) {
-        TestLogInOutToParent logInToParent = (TestLogInOutToParent) PageFactory.initElements(WebDriverContainer1.getDriver(), TestLogInOutToParent.class);
+        TestLogInOutToParent logInToParent = PageFactory.initElements(WebDriverContainer1.getDriver(), TestLogInOutToParent.class);
         logInToParent.getEmailInputLocator().sendKeys(email);
         logInToParent.getPasswordInputLocator().sendKeys(password);
         logInToParent.getLogInButton().click();
     }
 
-    @Test(priority = 0)
+    @Test(priority = 1)
     public void invalidLogIn() {
         MainPage mainPage = PageFactory.initElements(WebDriverContainer1.getDriver(), MainPage.class);
         mainPage.getMyAccountHeaderLink().click();
@@ -64,7 +64,7 @@ public class TestLogInOutToParent extends TestBase {
         WebDriverContainer1.getDriver().navigate().refresh();
     }
 
-    @Test(priority = 1)
+    @Test(priority = 2)
     public void testLogInProcess() {
         MainPage mainPage = PageFactory.initElements(WebDriverContainer1.getDriver(), MainPage.class);
         mainPage.getMyAccountHeaderLink().click();
@@ -76,7 +76,7 @@ public class TestLogInOutToParent extends TestBase {
         Assert.assertEquals(dashboardLoggedIn, "Dashboard");
     }
 
-    @Test(priority = 1)
+    @Test(priority = 3)
     public void testLogOutProcess() {
         ParentDashboard parentDashboard = PageFactory.initElements(WebDriverContainer1.getDriver(), ParentDashboard.class);
         parentDashboard.getLogoutButton().click();

@@ -52,7 +52,7 @@ public class SettingsPage {
     @FindBy(xpath = "/html/body/app-root/app-layout-parent/div/div[2]/main/app-parent-settings/div[2]/app-parent-settings-general/div/form/div[4]/mat-form-field/div/div[1]/div/input")
     private WebElement parentPasswordInput;
 
-    @FindBy(css = "div:nth-child(4) > div.name")
+    @FindBy(css = "app-parent-settings-general > div > form > div:nth-child(5) > div.col-6.name")
     private WebElement parentPassword;
 
     @FindBy(css = "form > button")

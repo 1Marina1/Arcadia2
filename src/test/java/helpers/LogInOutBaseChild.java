@@ -27,7 +27,9 @@ public class LogInOutBaseChild {
         WebDriverContainer1.getDriver().switchTo().newWindow(WindowType.WINDOW);
         WebDriverContainer1.getDriver().get(this.baseUrl);
         MainPage mainPage = PageFactory.initElements(WebDriverContainer1.getDriver(), MainPage.class);
-        mainPage.getMyAccountHeaderLink().click();
+
+        mainPage.getMyAccountHeaderLink().click();//здесь ошибка
+
         WebDriverContainer1.getDriver().manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         TestLogInOutToParent logInToParent = PageFactory.initElements(WebDriverContainer1.getDriver(), TestLogInOutToParent.class);
         logInToParent.attemptLogin("marina.veremchuk@northitgroup.eu", "zmxncbv12344321");

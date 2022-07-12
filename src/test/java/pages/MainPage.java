@@ -12,10 +12,9 @@ public class MainPage {
             xpath = "/html/body/app-root/app-layout/app-header/nav/div[1]/div[1]/app-top-menu/div/ul/li[1]/a"
     )
     private WebElement aboutUsHeaderLink;
-    @FindBy(
-            xpath = "/html/body/app-root/app-layout/app-header/nav/div[1]/div[1]/app-top-menu/div/ul/li[2]"
-    )
+    @FindBy(xpath = "/html/body/app-root/app-layout/app-header/nav/div[1]/div[1]/app-top-menu/div/ul/li[2]")
     private WebElement myAccountHeaderLink;
+
     @FindBy(
             css = ".create-account > a"
     )

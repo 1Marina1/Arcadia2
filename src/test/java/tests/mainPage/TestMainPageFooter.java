@@ -20,6 +20,7 @@ import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.MainPage;
+import pages.parentPages.ParentDashboard;
 
 @Listeners({ScreenshotListener1.class})
 public class TestMainPageFooter extends TestBase {
@@ -29,9 +30,11 @@ public class TestMainPageFooter extends TestBase {
     @Test
     public void goToCreateAccountPageViaFooter() {
         MainPage mainPage = PageFactory.initElements(WebDriverContainer1.getDriver(), MainPage.class);
+        ParentDashboard parentDashboard = PageFactory.initElements(WebDriverContainer1.getDriver(), ParentDashboard.class);
+        parentDashboard.getLogoutButton().click();
         mainPage.getHeaderLogo().click();
         mainPage.getCreateAccountFooterButton().click();
-        WebDriverContainer1.getDriver().manage().timeouts().implicitlyWait(4L, TimeUnit.SECONDS);
+        WebDriverContainer1.getDriver().manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
         String registrationCardTitle = mainPage.getRegistrationCardTitle().getText();
         Assert.assertEquals(registrationCardTitle, "Schritt 1:");
     }
@@ -74,7 +77,7 @@ public class TestMainPageFooter extends TestBase {
     public void goToDatenschutz() {
         MainPage mainPage = PageFactory.initElements(WebDriverContainer1.getDriver(), MainPage.class);
         mainPage.getDatenschutz().click();
-        WebDriverContainer1.getDriver().manage().timeouts().implicitlyWait(2L, TimeUnit.SECONDS);
+        WebDriverContainer1.getDriver().manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         String datenschutzPageTitle = mainPage.getDatenschutzPageTitle().getText();
         Assert.assertEquals(datenschutzPageTitle, "Datenschutz auf einen Blick");
     }
