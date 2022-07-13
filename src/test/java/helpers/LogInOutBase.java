@@ -31,7 +31,7 @@ public class LogInOutBase {
         Assert.assertTrue(parentDashboard.getDashboardTitle().isDisplayed());
     }
 
-   // @AfterTest
+    @AfterTest
     public void logOutAndTearDown() {
         ParentDashboard parentDashboard = PageFactory.initElements(WebDriverContainer1.getDriver(), ParentDashboard.class);
         parentDashboard.getLogoutButton().click();
