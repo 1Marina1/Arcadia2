@@ -23,10 +23,18 @@ public class ChildDashboard {
     private WebElement mathSubject;
 
     @FindBy(css = "div.list-subjects > ng-scrollbar > div > div > div > div > div:nth-child(1) > div:nth-child(1) > a")
-    private WebElement firstUnit;
+    private WebElement firstUnitFirstClass;
+
+    @FindBy(css = "a[href = '/de/pupil/subjects/math/2']")
+    private WebElement secondClassTab;
+
+    @FindBy(css = "div:nth-child(1) > div:nth-child(1) > a[href = '/de/pupil/subjects/math/2/2']")
+    private WebElement firstUnitSecondClass;
 
 
-    public WebElement getFirstUnit() {return firstUnit;}
+
+
+    public WebElement getFirstUnitFirstClass() {return firstUnitFirstClass;}
     public WebElement getMathSubject() {return mathSubject;}
     public WebElement getLogOutButtonChildDashboard() {
         return logOutButtonChildDashboard;
@@ -42,5 +50,11 @@ public class ChildDashboard {
     }
     public WebElement getWellDonePicture() {
         return wellDonePicture;
+    }
+    public WebElement getSecondClassTab() {
+        return secondClassTab;
+    }
+    public WebElement getFirstUnitSecondClass() {
+        return firstUnitSecondClass;
     }
 }
