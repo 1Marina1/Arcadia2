@@ -4,79 +4,66 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class Math1112Page {
-    @FindBy(
-            css = "input[formcontrolname = 'one']"
-    )
+
+    @FindBy(css = "div > div:nth-child(12) > a.second")
+    private WebElement task1112;
+
+    @FindBy(css = "input[formcontrolname = 'one']")
     private WebElement firstInput;
-    @FindBy(
-            css = "form > div > div:nth-child(2) > svg > text"
-    )
+
+    @FindBy(css = "form > div > div:nth-child(2) > svg > text")
     private WebElement firstNumber;
-    @FindBy(
-            css = "input[formcontrolname = 'two']"
-    )
+
+    @FindBy(css = "input[formcontrolname = 'two']")
     private WebElement secondInput;
-    @FindBy(
-            css = "form > div > div:nth-child(4) > svg:nth-child(1) > text"
-    )
+
+    @FindBy(css = "form > div > div:nth-child(4) > svg:nth-child(1) > text")
     private WebElement secondNumber;
-    @FindBy(
-            css = "input[formcontrolname = 'three']"
-    )
+
+    @FindBy(css = "input[formcontrolname = 'three']")
     private WebElement thirdInput;
-    @FindBy(
-            css = "input[formcontrolname = 'four']"
-    )
+
+    @FindBy(css = "input[formcontrolname = 'four']")
     private WebElement fourthInput;
-    @FindBy(
-            css = "input[formcontrolname = 'five']"
-    )
+
+    @FindBy(css = "input[formcontrolname = 'five']")
     private WebElement fifthInput;
-    @FindBy(
-            css = "form > div > div:nth-child(6) > svg > text"
-    )
+
+    @FindBy(css = "form > div > div:nth-child(6) > svg > text")
     private WebElement fourthNumber;
-    @FindBy(
-            css = "button.btn-question"
-    )
+
+    @FindBy(css = "button.btn-question")
     private WebElement submitButton;
 
-    public Math1112Page() {
-    }
 
     public WebElement getFirstInput() {
-        return this.firstInput;
+        return firstInput;
     }
-
     public WebElement getFirstNumber() {
-        return this.firstNumber;
+        return firstNumber;
     }
-
     public WebElement getSecondInput() {
-        return this.secondInput;
+        return secondInput;
     }
-
     public WebElement getSecondNumber() {
-        return this.secondNumber;
+        return secondNumber;
     }
-
     public WebElement getThirdInput() {
-        return this.thirdInput;
+        return thirdInput;
     }
-
     public WebElement getFifthInput() {
-        return this.fifthInput;
+        return fifthInput;
     }
-
     public WebElement getFourthInput() {
-        return this.fourthInput;
+        return fourthInput;
     }
-
     public WebElement getFourthNumber() {
-        return this.fourthNumber;
+        return fourthNumber;
     }
-
     public WebElement getSubmitButton() {
-        return this.submitButton;
+        return submitButton;
+    }
+    public WebElement getTask1112() {
+        return task1112;
     }
 }

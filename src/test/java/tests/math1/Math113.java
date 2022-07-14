@@ -27,7 +27,7 @@ public class Math113 extends LogInOutBaseChild {
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(childDashboard.getMathSubject()));
         ((JavascriptExecutor)WebDriverContainer1.getDriver()).executeScript("arguments[0].click();", element);
 
-        WebElement element1 = wait.until(ExpectedConditions.elementToBeClickable(childDashboard.getFirstUnit()));
+        WebElement element1 = wait.until(ExpectedConditions.elementToBeClickable(childDashboard.getFirstUnitFirstClass()));
         ((JavascriptExecutor)WebDriverContainer1.getDriver()).executeScript("arguments[0].click();", element1);
 
         WebElement element2 = wait.until(ExpectedConditions.elementToBeClickable(math113Page.getTask113()));

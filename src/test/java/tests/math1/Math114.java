@@ -17,7 +17,6 @@ import pages.mathElements.Math114Page;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class Math114 extends LogInOutBaseChild {
     @Test
@@ -31,7 +30,7 @@ public class Math114 extends LogInOutBaseChild {
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(childDashboard.getMathSubject()));
         ((JavascriptExecutor)WebDriverContainer1.getDriver()).executeScript("arguments[0].click();", element);
 
-        WebElement element1 = wait.until(ExpectedConditions.elementToBeClickable(childDashboard.getFirstUnit()));
+        WebElement element1 = wait.until(ExpectedConditions.elementToBeClickable(childDashboard.getFirstUnitFirstClass()));
         ((JavascriptExecutor)WebDriverContainer1.getDriver()).executeScript("arguments[0].click();", element1);
 
         WebElement element2 = wait.until(ExpectedConditions.elementToBeClickable(math114Page.getTask114()));
@@ -61,7 +60,6 @@ public class Math114 extends LogInOutBaseChild {
                 }
 
                 int answer = objects.size();
-                WebDriverContainer1.getDriver().manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
                 switch (answer){
                     case 1 -> pressAnswer.answerOne();
                     case 2 -> pressAnswer.answerTwo();
@@ -86,7 +84,6 @@ public class Math114 extends LogInOutBaseChild {
                     }
                 }
                 int answer1 = objects1.size();
-                WebDriverContainer1.getDriver().manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
                 switch (answer1){
                     case 1 -> pressAnswer.answerOne();
                     case 2 -> pressAnswer.answerTwo();
@@ -111,7 +108,6 @@ public class Math114 extends LogInOutBaseChild {
                     }
                 }
                 int answer2 = objects2.size();
-                WebDriverContainer1.getDriver().manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
                 switch (answer2) {
                     case 1 -> pressAnswer.answerOne();
                     case 2 -> pressAnswer.answerTwo();
@@ -136,7 +132,6 @@ public class Math114 extends LogInOutBaseChild {
                     }
                 }
                 int answer3 = objects3.size();
-                WebDriverContainer1.getDriver().manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
                 switch (answer3) {
                     case 1 -> pressAnswer.answerOne();
                     case 2 -> pressAnswer.answerTwo();
@@ -161,7 +156,6 @@ public class Math114 extends LogInOutBaseChild {
                     }
                 }
                 int answer4 = objects4.size();
-                WebDriverContainer1.getDriver().manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
                 switch (answer4) {
                     case 1 -> pressAnswer.answerOne();
                     case 2 -> pressAnswer.answerTwo();
@@ -186,7 +180,6 @@ public class Math114 extends LogInOutBaseChild {
                     }
                 }
                 int answer5 = objects5.size();
-                WebDriverContainer1.getDriver().manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
                 switch (answer5) {
                     case 1 -> pressAnswer.answerOne();
                     case 2 -> pressAnswer.answerTwo();
@@ -211,7 +204,6 @@ public class Math114 extends LogInOutBaseChild {
                     }
                 }
                 int answer6 = objects6.size();
-                WebDriverContainer1.getDriver().manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
                 switch (answer6){
                     case 1 -> pressAnswer.answerOne();
                     case 2 -> pressAnswer.answerTwo();
@@ -236,7 +228,6 @@ public class Math114 extends LogInOutBaseChild {
                     }
                 }
                 int answer7 = objects7.size();
-                WebDriverContainer1.getDriver().manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
                 switch (answer7){
                     case 1 -> pressAnswer.answerOne();
                     case 2 -> pressAnswer.answerTwo();
