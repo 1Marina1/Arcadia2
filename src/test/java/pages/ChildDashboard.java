@@ -16,7 +16,7 @@ public class ChildDashboard {
     @FindBy(css = "button[type ='submit']")
     private WebElement submitPasswordToParent;
 
-    @FindBy(css = "#svg-avatar-happy")
+    @FindBy(css = "div.card-body.well-done")
     private WebElement wellDonePicture;
 
     @FindBy(css = "app-pupil-dashboard > section > div > div:nth-child(1) > a")
@@ -29,18 +29,18 @@ public class ChildDashboard {
     public WebElement getFirstUnit() {return firstUnit;}
     public WebElement getMathSubject() {return mathSubject;}
     public WebElement getLogOutButtonChildDashboard() {
-        return this.logOutButtonChildDashboard;
+        return logOutButtonChildDashboard;
     }
     public WebElement getGoToParentDashboardButton() {
-        return this.goToParentDashboardButton;
+        return goToParentDashboardButton;
     }
     public WebElement getParentPassword() {
-        return this.parentPassword;
+        return parentPassword;
     }
     public WebElement getSubmitPasswordToParent() {
-        return this.submitPasswordToParent;
+        return submitPasswordToParent;
     }
     public WebElement getWellDonePicture() {
-        return this.wellDonePicture;
+        return wellDonePicture;
     }
 }

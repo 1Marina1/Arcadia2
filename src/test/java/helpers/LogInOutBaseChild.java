@@ -19,11 +19,9 @@ public class LogInOutBaseChild {
     protected WebDriver driver = WebDriverContainer1.initDriver();
     protected String baseUrl = "https://arcadia.study/de/";
 
-    public LogInOutBaseChild() {
-    }
-
     @BeforeTest
     public void logIn() {
+
         WebDriverContainer1.getDriver().switchTo().newWindow(WindowType.WINDOW);
         WebDriverContainer1.getDriver().get(this.baseUrl);
         MainPage mainPage = PageFactory.initElements(WebDriverContainer1.getDriver(), MainPage.class);
@@ -39,7 +37,7 @@ public class LogInOutBaseChild {
         parentDashboard.getLinkToKristinaKidsAccount().click();
     }
 
-    @AfterTest
+   // @AfterTest
     public void logOutAndTearDown() {
         ChildDashboard childDashboard = PageFactory.initElements(WebDriverContainer1.getDriver(), ChildDashboard.class);
         childDashboard.getLogOutButtonChildDashboard().click();

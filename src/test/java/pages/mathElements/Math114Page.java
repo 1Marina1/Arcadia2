@@ -11,7 +11,7 @@ public class Math114Page {
     @FindBy(css = "app-header-tasks > div > div > p > span")
     private WebElement taskParameter;
 
-    @FindBy(css = "div#todo")
+    @FindBy(css = "#todo")
     private WebElement taskBody;
 
     @FindBy(css = "div.footer-question> div:nth-child(1) > div")
@@ -32,7 +32,7 @@ public class Math114Page {
     @FindBy(css = "button.btn-question")
     private WebElement submitButton;
 
-    @FindBy(css = "div.body-question > div.flex-wrap.justify-content-center")
+    @FindBy(css = "div.body-question > div.justify-content-center")
     private WebElement taskSectionsDiv;
 
 
