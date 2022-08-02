@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.ChildDashboard;
-import pages.mathElements.Math1112Page;
+import pages.mathElements.math1Pages.Math1112Page;
 
 
 import java.time.Duration;

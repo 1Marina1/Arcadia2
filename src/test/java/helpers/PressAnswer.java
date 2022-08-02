@@ -3,8 +3,8 @@ package helpers;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import pages.ChildDashboard;
-import pages.mathElements.Math113Page;
-import pages.mathElements.Math114Page;
+import pages.mathElements.math1Pages.Math113Page;
+import pages.mathElements.math1Pages.Math114Page;
 
 
 public class PressAnswer {

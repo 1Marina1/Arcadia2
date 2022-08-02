@@ -1,4 +1,4 @@
-package pages.mathElements;
+package pages.mathElements.math1Pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

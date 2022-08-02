@@ -10,10 +10,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.ChildDashboard;
-import pages.mathElements.Math211Page;
+import pages.mathElements.math2Pages.Math211Page;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 public class Math211 extends LogInOutBaseChild {
     @Test

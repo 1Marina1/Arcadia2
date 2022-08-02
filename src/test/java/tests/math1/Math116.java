@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import pages.ChildDashboard;
-import pages.mathElements.Math116Page;
+import pages.mathElements.math1Pages.Math116Page;
 
 import java.time.Duration;
 

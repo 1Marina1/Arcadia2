@@ -1,4 +1,4 @@
-package pages.mathElements;
+package pages.mathElements.math2Pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,7 +19,6 @@ public class Math211Page {
 
     @FindBy(css = "button.btn-question")
     private WebElement submitButton;
-
 
 
     public WebElement getAnswerFieldInput() {
