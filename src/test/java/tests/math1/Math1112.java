@@ -1,15 +1,15 @@
 package tests.math1;
 
+import helpers.GoToFirstUnit;
 import helpers.LogInOutBaseChild;
+import helpers.PressAnswer;
 import helpers.WebDriverContainer1;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.ChildDashboard;
 import pages.mathElements.math1Pages.Math1112Page;
 
 
@@ -18,15 +18,12 @@ import java.time.Duration;
 public class Math1112 extends LogInOutBaseChild {
     @Test
     public void math1112(){
-        ChildDashboard childDashboard = PageFactory.initElements(WebDriverContainer1.getDriver(), ChildDashboard.class);
         Math1112Page math1112Page = PageFactory.initElements(WebDriverContainer1.getDriver(), Math1112Page.class);
         WebDriverWait wait = new WebDriverWait(WebDriverContainer1.getDriver(), Duration.ofSeconds(15));
+        PressAnswer pressAnswer = PageFactory.initElements(WebDriverContainer1.getDriver(), PressAnswer.class);
+        GoToFirstUnit goToFirstUnit = PageFactory.initElements(WebDriverContainer1.getDriver(), GoToFirstUnit.class);
 
-        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(childDashboard.getMathSubject()));
-        ((JavascriptExecutor)WebDriverContainer1.getDriver()).executeScript("arguments[0].click();", element);
-
-        WebElement element1 = wait.until(ExpectedConditions.elementToBeClickable(childDashboard.getFirstUnitFirstClass()));
-        ((JavascriptExecutor)WebDriverContainer1.getDriver()).executeScript("arguments[0].click();", element1);
+        goToFirstUnit.goToFirstUnit();
 
         WebElement element2 = wait.until(ExpectedConditions.elementToBeClickable(math1112Page.getTask1112()));
         ((JavascriptExecutor)WebDriverContainer1.getDriver()).executeScript("arguments[0].click();", element2);
@@ -46,7 +43,6 @@ public class Math1112 extends LogInOutBaseChild {
         WebElement element4 = wait.until(ExpectedConditions.elementToBeClickable(math1112Page.getSubmitButton()));
         ((JavascriptExecutor)WebDriverContainer1.getDriver()).executeScript("arguments[0].click();", element4);
 
-        WebElement element5 = wait.until(ExpectedConditions.elementToBeClickable(childDashboard.getWellDonePicture()));
-        Assert.assertTrue(childDashboard.getWellDonePicture().isDisplayed());
+        pressAnswer.assertTask();
     }
 }

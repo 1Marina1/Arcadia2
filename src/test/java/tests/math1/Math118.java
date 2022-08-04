@@ -1,5 +1,6 @@
 package tests.math1;
 
+import helpers.GoToFirstUnit;
 import helpers.LogInOutBaseChild;
 import helpers.PressAnswer;
 import helpers.WebDriverContainer1;
@@ -12,7 +13,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
-import pages.ChildDashboard;
 import pages.mathElements.math1Pages.Math118Page;
 
 import java.time.Duration;
@@ -22,17 +22,13 @@ public class Math118 extends LogInOutBaseChild {
 
     @Test
     public void math118(){
-        ChildDashboard childDashboard = PageFactory.initElements(WebDriverContainer1.getDriver(), ChildDashboard.class);
         Math118Page math118Page = PageFactory.initElements(WebDriverContainer1.getDriver(), Math118Page.class);
         WebDriverWait wait = new WebDriverWait(WebDriverContainer1.getDriver(), Duration.ofSeconds(15));
         PressAnswer pressAnswer = PageFactory.initElements(WebDriverContainer1.getDriver(), PressAnswer.class);
         Actions builder = new Actions(WebDriverContainer1.getDriver());
+        GoToFirstUnit goToFirstUnit = PageFactory.initElements(WebDriverContainer1.getDriver(), GoToFirstUnit.class);
 
-        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(childDashboard.getMathSubject()));
-        ((JavascriptExecutor)WebDriverContainer1.getDriver()).executeScript("arguments[0].click();", element);
-
-        WebElement element1 = wait.until(ExpectedConditions.elementToBeClickable(childDashboard.getFirstUnitFirstClass()));
-        ((JavascriptExecutor)WebDriverContainer1.getDriver()).executeScript("arguments[0].click();", element1);
+        goToFirstUnit.goToFirstUnit();
 
         WebElement element2 = wait.until(ExpectedConditions.elementToBeClickable(math118Page.getTask118()));
         ((JavascriptExecutor)WebDriverContainer1.getDriver()).executeScript("arguments[0].click();", element2);
